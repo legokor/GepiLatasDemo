@@ -1,0 +1,2 @@
+# GepiLatasDemo
+OpenCV demo application
