@@ -1,12 +1,18 @@
 import cv2
 
+from buttons import BUTTONS
+from trackbars import TRACKBARS
+
 
 KEY_ESC = 27
 WINDOW_NAME = 'main'
 
 
 def populate_toolbars():
-    pass
+    for name, args in BUTTONS.items():
+        cv2.createButton(name, **args)
+    for name, args in TRACKBARS.items():
+        cv2.createTrackbar(name, WINDOW_NAME, *args)
 
 
 if __name__ == '__main__':
