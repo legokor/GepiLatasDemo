@@ -19,5 +19,7 @@ if __name__ == '__main__':
     cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL | cv2.WINDOW_GUI_EXPANDED)
     populate_toolbars()
 
+    cv2.displayOverlay(WINDOW_NAME, 'press ctrl + p', 3000)
+
     while cv2.waitKey(30) != KEY_ESC:
         pass
