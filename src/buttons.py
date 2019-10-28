@@ -10,7 +10,7 @@ CHECKED = 1
 @update_global_image_var
 @display_returned_image
 def load_image(*_):
-    return cv2.imread('../resources/test.jpeg', cv2.IMREAD_COLOR)
+    return cv2.imread('resources/test.jpeg', cv2.IMREAD_COLOR)
 
 
 @update_global_image_var
