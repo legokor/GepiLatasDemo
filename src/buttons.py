@@ -10,7 +10,7 @@ CHECKED = 1
 @update_global_image_var
 @display_returned_image
 def load_image(*_):
-    return cv2.imread('resources/test.jpeg', cv2.IMREAD_COLOR)
+    return cv2.imread('../resources/test.jpeg', cv2.IMREAD_COLOR)
 
 
 @update_global_image_var
@@ -22,6 +22,12 @@ def toggle_hsv(img, btn_state, *_):
         return cv2.cvtColor(img, cv2.COLOR_HSV2BGR)
 
 
+@update_global_image_var
+@display_returned_image
+def to_greyscale(img, *_):
+    grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    return grey
+
 # 'buttonType' values:
 #     one of: QT_CHECKBOX / QT_PUSH_BUTTON / QT_RADIOBOX
 #     QT_NEW_BUTTONBAR is kinda like a linebreak
@@ -29,4 +35,5 @@ def toggle_hsv(img, btn_state, *_):
 BUTTONS = {
     'Load image': {'onChange': load_image},
     'Toggle HSV': {'onChange': toggle_hsv, 'buttonType': cv2.QT_CHECKBOX},
+    'To greyscale': {'onChange': to_greyscale},
 }
